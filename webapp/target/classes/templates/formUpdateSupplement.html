@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Modifier Supplément</title>
+</head>
+<body>
+	<form method="post" th:action="@{/saveSupplement}" th:object="${supplement}">
+		<p>Modifier <span th:text="*{name}"> nom </span></p>
+		<input type="hidden" th:field="*{id}" class="form-control">
+		<input type="text" th:field="*{name}" class="form-control" id="nameInput" placeholder="Nom du supplémenet">
+		<input type="text" th:field="*{quantity}" class="form-control" id="quantityInput" placeholder="Quantité du supplément">
+		<button type="submit">Modifier</button>
+	</form>
+</body>
+</html>

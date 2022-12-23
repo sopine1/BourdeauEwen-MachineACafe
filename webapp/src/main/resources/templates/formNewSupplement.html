@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Ajouter Supplement</title>
+</head>
+<body>
+	<form method="post" th:action="@{/saveSupplement}" th:object="${supplement}">
+		<p>Ajouter un Supplémenet</p>
+		<input type="text" th:field="*{name}" id="nameInput" placeholder="Nom du supplement">
+		<input type="text" th:field="*{quantity}" id="quantityInput" placeholder="Quantité">
+		<button type="submit">Ajouter</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Ajouter Supplement</title>
+</head>
+<body>
+	<form method="post" th:action="@{/saveCommande}" th:object="${commande}">
+		<select name="idBoisson" th:field="*{idBoisson}" id="idBoisson">
+			<option th:each="boisson: ${boissons}" th:field="*{idBoisson}" th:value="${boisson.id}" th:text="${boisson.name}">--Please choose an option--</option>
+		</select>
+		<p th:each="supp: ${supplements}" >
+			<input type="checkbox" th:field="*{idSupplements}" th:value="${supp.id}" th:text="${supp.name}"></input>
+		</p>
+		<button type="submit">Ajouter</button>
+	</form>
+</body>
+</html>
